@@ -1,5 +1,8 @@
 # PWEdane
 
+[![Travis-CI Build Status](https://travis-ci.org/zozlak/ZPD.png?branch=master)](https://travis-ci.org/zozlak/PWEdane)
+[![Coverage Status](https://coveralls.io/repos/zozlak/ZPD/badge.svg)](https://coveralls.io/r/zozlak/PWEdane)
+
 Pakiet dla wygody Bartka, umożliwiający pobieranie wyników egzaminów i testów zrównujących z dołączonymi wszystkimi potrzebnymi do skalowań zrównujących zmiennymi.
 
 ## Instalacja
