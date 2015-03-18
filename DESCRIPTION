@@ -8,7 +8,7 @@ Version: 0.0.1
 Author: Mateusz Zoltak <zozlak@zozlak.org>
 Maintainer: Mateusz Zoltak <zozlak@zozlak.org>
 Depends: 
-  ZPD (>= 1.1.3)
+  ZPD (>= 1.1.4)
 Suggests: 
   knitr, 
   testthat

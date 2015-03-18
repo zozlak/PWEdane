@@ -1,0 +1,13 @@
+--------------------
+Zmiany w PWEdane 0.0.1 (2015-03-18)
+
+- Dodanie funkcji:
+  - pobierz_wyniki() do pobierania wyników egzaminów
+  - pobierz_zrownywanie() do pobierania wyników testów zrównujących
+  - znajdz_skale_dla_testow() do wyszukiwania domyślnej skali dla w.w. funkcji
+  - pobierz_dane_kontekstowe() do pobierania danych kontekstowych dla w.w. 
+    funkcji
+- Zmiany techniczne:
+  - obłożenie podstawowymi testami funkcji pobierz_zrownywanie(), 
+    pobierz_dane_kontekstowe(), znajdz_skale_dla_testow()
+  - próba uruchomienia Travis-a i Coveralls
