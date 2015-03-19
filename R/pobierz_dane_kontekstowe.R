@@ -30,12 +30,14 @@ pobierz_dane_kontekstowe = function(
     length(intersect(colnames(daneFiltr), colnames(uczniowieTesty))) > 0
   )
   
-  daneKontekstowe = uczniowieTesty %>%
+  daneKontekstowe = suppressMessages(
+    uczniowieTesty %>%
     semi_join(daneFiltr, copy = TRUE) %>%
     inner_join(uczniowie) %>%
     inner_join(testy) %>%
     left_join(szkoly) %>%
     select_('id_obserwacji', 'plec', 'dysleksja', 'laureat', 'pop_podejscie', 'id_szkoly', 'teryt_szkoly', 'id_testu', 'opis_testu')
+  )
 
   return(daneKontekstowe)
 }

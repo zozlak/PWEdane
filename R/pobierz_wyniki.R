@@ -34,6 +34,9 @@ pobierz_wyniki = function(
   )
   
   src  = polacz()
+  on.exit({
+    DBI::dbDisconnect(src$con)
+  })
   
   if(is.na(czyEwd)){
     if(rodzajEgzaminu == 'egzamin gimnazjalny'){
@@ -63,7 +66,7 @@ pobierz_wyniki = function(
     }
     if(nrow(skale) == 0){
       idSkali = NULL
-      warning('Nie udalo sie dopasowac skali do wskazanych wynikow egzaminu - pobieranie danych bez zastosowania skali')
+      message('Nie udalo sie dopasowac skali do wskazanych wynikow egzaminu - pobieranie danych bez zastosowania skali')
     }else{
       idSkali = skale$id_skali[1]
       message('Stosuje skale ', idSkali)
@@ -72,9 +75,11 @@ pobierz_wyniki = function(
   
   wyniki = pobierz_wyniki_egzaminu(src, rodzajEgzaminu, czescEgzaminu, rokEgzaminu, czyEwd, 'idSkali' = idSkali, 'skroc' = skroc)
 
-  wyniki = pobierz_dane_kontekstowe(testy) %>%
+  wyniki = suppressMessages(
+    pobierz_dane_kontekstowe(testy) %>%
     collect() %>%
     inner_join(wyniki %>% collect())
+  )
   
   return(wyniki)
 }

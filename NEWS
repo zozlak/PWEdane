@@ -1,4 +1,11 @@
 --------------------
+Zmiany w PWEdane 0.0.2 (2015-03-19)
+
+- Zamykanie otwartych połączeń z bazą danych przy opuszczaniu funkcji (tam, 
+  gdzie to możliwe), aby oszczędzać pulę połączeń serwera baz danych.
+- Usunięcie wyświetlania komunikatów generowanych przez funkcje join_...()
+
+--------------------
 Zmiany w PWEdane 0.0.1 (2015-03-18)
 
 - Dodanie funkcji:

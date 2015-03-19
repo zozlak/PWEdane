@@ -26,7 +26,10 @@ pobierz_zrownywanie = function(
   )
   
   src = polacz()
-
+  on.exit({
+    DBI::dbDisconnect(src$con)
+  })
+  
   rokTmp = rok
   testy = pobierz_testy(src) %>%
     filter_(~rodzaj_egzaminu == rodzajEgzaminu, ~czy_egzamin == FALSE, ~rok == rokTmp) %>%
