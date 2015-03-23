@@ -1,4 +1,11 @@
 --------------------
+Zmiany w PWEdane 0.0.3 (2015-03-23)
+
+- Dodanie do funkcji pobierz_dane_kontekstowe() zmiennej "populacja" 
+  określającej, czy dana obserwacja należy do podstawowej populacji PWE, 
+  czy nie
+
+--------------------
 Zmiany w PWEdane 0.0.2 (2015-03-19)
 
 - Zamykanie otwartych połączeń z bazą danych przy opuszczaniu funkcji (tam, 

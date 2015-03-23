@@ -55,7 +55,8 @@ pobierz_zrownywanie = function(
   
   wyniki = pobierz_dane_kontekstowe(testy) %>%
     collect() %>%
-    inner_join(wyniki %>% collect())
+    inner_join(wyniki %>% collect()) %>%
+    mutate_('populacja' = TRUE)
   
   return(wyniki)
 }

@@ -36,7 +36,13 @@ pobierz_dane_kontekstowe = function(
     inner_join(uczniowie) %>%
     inner_join(testy) %>%
     left_join(szkoly) %>%
-    select_('id_obserwacji', 'plec', 'dysleksja', 'laureat', 'pop_podejscie', 'id_szkoly', 'teryt_szkoly', 'id_testu', 'opis_testu')
+    mutate_('populacja' = 
+      ~(
+        (typ_szkoly %in% c('SP', 'gimn.') & (id_szkoly < 0 | (dla_doroslych == FALSE & (specjalna == FALSE | is.na(specjalna)) & (przyszpitalna == FALSE | is.na(przyszpitalna))))) |
+        (typ_szkoly %in% c('T', 'LO', 'LP') & id_szkoly > 0 & dla_doroslych == FALSE & (specjalna == FALSE | is.na(specjalna)) & (przyszpitalna == FALSE | is.na(przyszpitalna)))
+      ) & is.na(pop_podejscie)
+    ) %>%
+    select_('id_obserwacji', 'plec', 'dysleksja', 'laureat', 'pop_podejscie', 'id_szkoly', 'teryt_szkoly', 'id_testu', 'opis_testu', 'populacja')
   )
 
   return(daneKontekstowe)

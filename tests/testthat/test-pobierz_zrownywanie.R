@@ -7,4 +7,5 @@ test_that('pobierz_zrownywanie działa', {
   expect_more_than(ncol(dane), 10)
   expect_more_than(sum(grepl('^k_', colnames(dane))), 0)
   expect_more_than(sum(grepl('^p_', colnames(dane))), 0)
+  expect_equal(all(dane$populacja == TRUE), TRUE)
 })

@@ -4,7 +4,7 @@ Description:
   Pakiet dla wygody Bartka, umozliwiajacy pobieranie wynikow egzaminow 
   i testow zrownujacych z dolaczonymi wszystkimi potrzebnymi zmiennymi
   kontekstowymi.
-Version: 0.0.2
+Version: 0.0.3
 Author: Mateusz Zoltak <zozlak@zozlak.org>
 Maintainer: Mateusz Zoltak <zozlak@zozlak.org>
 Depends: 
