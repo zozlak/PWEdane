@@ -13,3 +13,5 @@ test_that('pobierz_wyniki zgłasza błędy', {
   expect_error(pobierz_wyniki('egzamin gimnazjalny', '', 2001), 'W bazie danych brak wskazanych wynikow egzaminu')
   expect_error(pobierz_wyniki('matura', '', 2009), 'W bazie danych brak wskazanych wynikow egzaminu')
 })
+
+  

@@ -58,21 +58,25 @@ pobierz_wyniki = function(
   }
   
   # automatyczne dopasowywanie skali
-  if(is.na(idSkali)){
-    skale = znajdz_skale_dla_testow(testy)
-    if(nrow(skale) > 1){
-      print(skale)
-      stop('W bazie istnieje wiecej niz jedna skala pasujaca do wskazanych wynikow egzaminu')
+  if(punktuj == TRUE){
+    if(is.na(idSkali)){
+      skale = znajdz_skale_dla_testow(testy)
+      if(nrow(skale) > 1){
+        print(skale)
+        stop('W bazie istnieje wiecej niz jedna skala pasujaca do wskazanych wynikow egzaminu')
+      }
+      if(nrow(skale) == 0){
+        idSkali = NULL
+        message('Nie udalo sie dopasowac skali do wskazanych wynikow egzaminu - pobieranie danych bez zastosowania skali')
+      }else{
+        idSkali = skale$id_skali[1]
+        message('Stosuje skale ', idSkali)
+      }
     }
-    if(nrow(skale) == 0){
-      idSkali = NULL
-      message('Nie udalo sie dopasowac skali do wskazanych wynikow egzaminu - pobieranie danych bez zastosowania skali')
-    }else{
-      idSkali = skale$id_skali[1]
-      message('Stosuje skale ', idSkali)
-    }
+  }else{
+    idSkali = NULL
   }
-  
+
   wyniki = pobierz_wyniki_egzaminu(src, rodzajEgzaminu, czescEgzaminu, rokEgzaminu, czyEwd, 'idSkali' = idSkali, 'skroc' = skroc)
 
   wyniki = suppressMessages(

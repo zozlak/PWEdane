@@ -36,21 +36,24 @@ pobierz_zrownywanie = function(
     collect() %>%
     filter_(~grepl('^zrównywanie;', opis_testu))
 
-  if(is.na(idSkali)){
-    skale = znajdz_skale_dla_testow(testy)
-    if(nrow(skale) > 1){
-      print(skale)
-      stop('W bazie istnieje wiecej niz jedna skala pasujaca do wskazanych wynikow egzaminu')
+  if(punktuj == TRUE){
+    if(is.na(idSkali)){
+      skale = znajdz_skale_dla_testow(testy)
+      if(nrow(skale) > 1){
+        print(skale)
+        stop('W bazie istnieje wiecej niz jedna skala pasujaca do wskazanych wynikow egzaminu')
+      }
+      if(nrow(skale) == 0){
+        idSkali = NULL
+        warning('Nie udalo sie dopasowac skali do wskazanych wynikow egzaminu - pobieranie danych bez zastosowania skali')
+      }else{
+        idSkali = skale$id_skali[1]
+        message('Stosuje skale ', idSkali)
+      }
     }
-    if(nrow(skale) == 0){
-      idSkali = NULL
-      warning('Nie udalo sie dopasowac skali do wskazanych wynikow egzaminu - pobieranie danych bez zastosowania skali')
-    }else{
-      idSkali = skale$id_skali[1]
-      message('Stosuje skale ', idSkali)
-    }
+  }else{
+    idSkali = NULL
   }
-    
   wyniki = pobierz_wyniki_zrownywania(src, rodzajEgzaminu, rok, punktuj, idSkali, skroc)
   
   wyniki = pobierz_dane_kontekstowe(testy) %>%
