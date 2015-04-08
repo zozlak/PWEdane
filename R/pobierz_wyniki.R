@@ -77,7 +77,7 @@ pobierz_wyniki = function(
     idSkali = NULL
   }
 
-  wyniki = pobierz_wyniki_egzaminu(src, rodzajEgzaminu, czescEgzaminu, rokEgzaminu, czyEwd, 'idSkali' = idSkali, 'skroc' = skroc)
+  wyniki = pobierz_wyniki_egzaminu(src, rodzajEgzaminu, czescEgzaminu, rokEgzaminu, czyEwd, punktuj, 'idSkali' = idSkali, 'skroc' = skroc)
 
   wyniki = suppressMessages(
     pobierz_dane_kontekstowe(testy) %>%

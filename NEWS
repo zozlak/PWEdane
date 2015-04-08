@@ -1,4 +1,10 @@
 --------------------
+Zmiany w PWEdane 0.0.5 (2015-04-08)
+
+- Argument punktuj funkcji pobierz_wyniki() jest teraz brany pod uwagę
+  (dotychczas, wskutek błędu, jego wartość była pomijana).
+
+--------------------
 Zmiany w PWEdane 0.0.4 (2015-03-31)
 
 - Pobieranie wyników niewypunktowanych wymusza niestosowanie skali.
