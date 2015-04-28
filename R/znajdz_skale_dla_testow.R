@@ -41,7 +41,7 @@ znajdz_skale_dla_testow = function(
     filter_(~rodzaj_skali == rodzajSkali) %>% 
     collect() %>% # z uwagi na błąd dplyr-a, który nie radzi sobie, jesli po stronie serwera SQL zostanie 0 wierszy
     semi_join(testy, copy = TRUE) %>%
-    group_by_('id_skali', 'nazwa_skali', 'opis_skali') %>% 
+    group_by_('id_skali', 'opis_skali') %>% 
     summarize_('n' = ~n()) %>%
     filter_(~n == lTestow)
   )

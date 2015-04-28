@@ -1,4 +1,9 @@
 --------------------
+Zmiany w PWEdane 0.0.6 (2015-04-28)
+
+- Dostosowanie do zmiany w strukturze grupy danych "skale" pakietu ZPD
+
+--------------------
 Zmiany w PWEdane 0.0.5 (2015-04-08)
 
 - Argument punktuj funkcji pobierz_wyniki() jest teraz brany pod uwagę
