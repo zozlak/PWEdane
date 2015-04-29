@@ -35,7 +35,7 @@ pobierz_zrownywanie = function(
   testy = pobierz_testy(src) %>%
     filter_(~rodzaj_egzaminu == rodzajEgzaminu, ~czy_egzamin == FALSE, ~rok == rokTmp) %>%
     collect() %>%
-    filter_(~grepl('^zr\u00F3wnywanie;', opis_testu))
+    filter_(~grepl('^zrównywanie;', opis_testu))
 
   if(punktuj == TRUE){
     if(is.na(idSkali)){

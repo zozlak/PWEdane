@@ -13,7 +13,7 @@
 #' @export
 znajdz_skale_dla_testow = function(
   idTestow,
-  rodzajSkali = 'zr\u00F3wnywanie'
+  rodzajSkali = 'zrównywanie'
 ){
   if(is.tbl(idTestow) | is.data.frame(idTestow)){
     stopifnot(
