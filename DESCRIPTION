@@ -10,7 +10,7 @@ Maintainer: Mateusz Zoltak <zozlak@zozlak.org>
 Depends: 
   R
 Imports:
-  ZPD,
+  ZPD (>= 1.1.7),
   DBI,
   dplyr
 Suggests: 

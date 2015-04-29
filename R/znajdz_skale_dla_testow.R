@@ -9,10 +9,11 @@
 #'   lub ramka danych z kolumną \code{id_testu})
 #' @param rodzajSkali rodzaj wyszukiwanej skali ('zrównywanie'/'ktt'/'ewd')
 #' @import ZPD
+#' @import dplyr
 #' @export
 znajdz_skale_dla_testow = function(
   idTestow,
-  rodzajSkali = 'zrównywanie'
+  rodzajSkali = 'zr\u00F3wnywanie'
 ){
   if(is.tbl(idTestow) | is.data.frame(idTestow)){
     stopifnot(

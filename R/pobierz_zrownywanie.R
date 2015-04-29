@@ -9,6 +9,7 @@
 #' @param idSkali identyfikator skali, ktora ma zostac zastosowana do danych
 #' @param skroc czy do danych zastosowac skrocenia skal opisane w skali
 #' @import ZPD
+#' @import dplyr
 #' @export
 pobierz_zrownywanie = function(
   rodzajEgzaminu, 
@@ -34,7 +35,7 @@ pobierz_zrownywanie = function(
   testy = pobierz_testy(src) %>%
     filter_(~rodzaj_egzaminu == rodzajEgzaminu, ~czy_egzamin == FALSE, ~rok == rokTmp) %>%
     collect() %>%
-    filter_(~grepl('^zrównywanie;', opis_testu))
+    filter_(~grepl('^zr\u00F3wnywanie;', opis_testu))
 
   if(punktuj == TRUE){
     if(is.na(idSkali)){

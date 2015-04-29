@@ -10,6 +10,7 @@
 #' \code{semi_join(pobierz_dane_uczniowie_testy(), daneFiltr)}.
 #' @param daneFiltr ramka danych filtrujących - patrz opis
 #' @import ZPD
+#' @import dplyr
 #' @export
 pobierz_dane_kontekstowe = function(
   daneFiltr

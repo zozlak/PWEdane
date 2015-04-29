@@ -13,6 +13,7 @@
 #' @param idSkali identyfikator skali, ktora ma zostac zastosowana do danych
 #' @param skroc czy do danych zastosowac skrocenia skal opisane w skali
 #' @import ZPD
+#' @import dplyr
 #' @export
 pobierz_wyniki = function(
   rodzajEgzaminu,
